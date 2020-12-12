@@ -12,17 +12,17 @@ Requirements:
 * GPG service locally
 
 ```bash
-$ brew cask install Keybase
+$ brew cask install keybase
 $ brew install gpg
 ```
 
 Create new personal key. (Note: you can skip if you already maintain your key via alternative means)
 ```bash
-$ Keybase pgp gen —multi
+$ keybase pgp gen —-multi
 
 # If your gpg is running local then you should see the following
 
-Enter your real name, which will be publicly visible in your new key: Jane DOe
+Enter your real name, which will be publicly visible in your new key: Jane Doe
 Enter a public email address for your key: jdoe@thoughtworks.com
 Enter another email address (or <enter> when done): jane.doe@gmail.com
 Enter another email address (or <enter> when done):
@@ -52,11 +52,11 @@ ssb   rsa4096/55AD50E8A4EF5CE5 2020-05-25 [E] [expires: 2036-05-21]
 
 # add to git config
 
-$ git config --global user.signingkey A8E47CAE38308EC9
+$ git config --global user.signingkey 55AD50E8A4EF5CE5
 $ git config --global commit.gpgsign true
 
 # copy to clipboard for pasting into github
-keybase pgp export -q 5BE03B7DE63C0271 | pbcopy
+keybase pgp export -q A8E47CAE38308EC9 | pbcopy
 
 # test
 export GPG_TTY=$(tty)
